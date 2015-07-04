@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Angular Data</title>
+  <title>TGW Customizer</title>
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <link rel="stylesheet" href="css/style.css">
 
@@ -14,6 +14,9 @@
 
 </head>
 <body>
-Hello World!  I'm Carie
+	<div class="page" ng-app="tgwClubCustomizer">
+		<nav class="cf" ng-include="'views/nav.html'"></nav>
+		<main class="cf" ng-view></main>
+	</div>
 </body>
 </html>
