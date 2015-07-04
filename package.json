@@ -1,0 +1,24 @@
+{
+  "name": "tgw-proof",
+  "version": "1.0.0",
+  "description": "Proof of concept for TGW customizer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nagapampa/tgw-proof.git"
+  },
+  "author": "Carie Rogers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagapampa/tgw-proof/issues"
+  },
+  "homepage": "https://github.com/nagapampa/tgw-proof",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-util": "^2.2.20",
+    "gulp-webserver": "^0.8.1"
+  }
+}
