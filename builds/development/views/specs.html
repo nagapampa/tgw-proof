@@ -1,1 +1,64 @@
-Specs
+<form name="frmSpecs"
+    novalidate>
+
+    <section class="itemSpecs">
+
+	    <h1>Select Customizations</h1>
+
+	    Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
+	      <option value="">Select an option</option>
+		  <option value="0">Zero</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		</select>
+		
+	    <p class="error validationerror"
+	      ng-show="frmSpecs.shaftType.$invalid && frmSpecs.shaftType.$touched">
+	      Shaft type is a required field</p>
+
+	    <br/>
+
+	    Shaft Flex: <select name="shaftFlex" ng-model="item.shaftFlex" ng-required="true">
+	      <option value="">Select an option</option>
+		  <option value="0">Zero</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		</select>
+		
+	    <p class="error validationerror"
+	      ng-show="frmSpecs.shaftFlex.$invalid && frmSpecs.shaftFlex.$touched">
+	      Shaft flex is a required field</p>
+
+	    <br/>
+
+	    Lie Angle: <select name="lieAngle" ng-model="item.lieAngle" ng-required="true">
+	      <option value="">Select an option</option>
+		  <option value="0">Zero</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		</select>
+		
+	    <p class="error validationerror"
+	      ng-show="frmSpecs.lieAngle.$invalid && frmSpecs.lieAngle.$touched">
+	      Lie Angle is a required field</p>
+
+	</section>
+
+	<hr>
+
+    <section class="itemTotal">
+    	<ul>
+    		<li>Shaft Type: {{item.shaftType}}</li>
+    		<li>Shaft Flex: {{item.shaftFlex}}</li>
+    		<li>Lie Angle: {{item.lieAngle}}</li>
+    	</ul>
+    </section>
+
+	<button type="submit" class="btn"
+  		ng-disabled="frmSpecs.$invalid">Add to Cart</button>
+  	<br/>
+  	<a ng-href="#/intro">Back to Intro</a>
+</form>	
+
+<h2>Custom club orders are placed directly with the manufacturer.  Please allow approximately 3-4 weeks for delivery.</h2>
+<h3>Cancellations or changes must be made within 24 hours of placing your order by emailing <a href="mailto:customclubs@tgw.com">customclubs@tgw.com</a>.  After 24 hours, the order cannot be modified or canceled.</h3>
