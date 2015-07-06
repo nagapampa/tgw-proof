@@ -8,10 +8,10 @@
 
 	    Select your height: 
 	    <select name="feet" ng-model="profile.feet" ng-required="true">
-	      <option ng-repeat="feet in feet" value="{{feet}}">{{feet}}</option>
+	      <option ng-repeat="f in feetMeasurement" value="{{f}}">{{f}}</option>
 		</select>'
 		<select name="inches" ng-model="profile.inches" ng-required="true">
-	      <option ng-repeat="inch in inches" value="{{inch}}">{{inch}}</option>
+	      <option ng-repeat="i in inchesMeasurement" value="{{i}}">{{i}}</option>
 		</select>''
 		
 	    <p class="error validationerror"

@@ -1,6 +1,4 @@
-var tgwClubCustomizer = angular.module ('tgwClubCustomizer',  ['ngRoute', 'appControllers']);
-
-var appControllers = angular.module('appControllers', []);
+var tgwClubCustomizer = angular.module ('tgwClubCustomizer',  ['ngRoute']);
 
 tgwClubCustomizer.config(['$routeProvider', function($routeProvider) {
   $routeProvider.

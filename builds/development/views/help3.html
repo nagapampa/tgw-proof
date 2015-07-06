@@ -1,2 +1,40 @@
 <div ng-include="'views/helpNav.html'"></div>
 <h1>Grip Options</h2>
+
+
+<form name="frmStep3"
+    ng-submit="submitStep3()" novalidate>
+
+    <section class="step3">
+
+	Grip: <select name="grip" ng-model="item.grip" ng-required="true">
+      <option value="">Select an option</option>
+	  <option value="0">Zero</option>
+	  <option value="1">One</option>
+	  <option value="2">Two</option>
+	</select>
+	
+    <p class="error validationerror"
+      ng-show="frmStep3.grip.$invalid && frmStep3.grip.$touched">
+      Grip is a required field</p>
+
+    <br/>
+
+    Grip Size: <select name="gripSize" ng-model="item.gripSize" ng-required="true">
+      <option value="">Select an option</option>
+	  <option value="0">Zero</option>
+	  <option value="1">One</option>
+	  <option value="2">Two</option>
+	</select>
+	
+    <p class="error validationerror"
+      ng-show="frmStep3.gripSize.$invalid && frmStep3.gripSize.$touched">
+      Grip Size is a required field</p>
+
+	</section>
+
+	<button type="submit" class="btn"
+  		ng-disabled="frmStep3.$invalid">Next</button>
+  	<br/>
+  	<a ng-href="#/intro">Back to Intro</a>
+</form>

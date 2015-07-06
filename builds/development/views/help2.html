@@ -8,10 +8,7 @@
     <section class="step2">
 
 	Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
-      <option value="">Select an option</option>
-	  <option value="0">Zero</option>
-	  <option value="1">One</option>
-	  <option value="2">Two</option>
+      <option ng-repeat="f in product.catalogEntryView[0].sKUs" value="{{f.uniqueID}}">{{f.shortDescription}}</option>
 	</select>
 	
     <p class="error validationerror"
