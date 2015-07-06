@@ -1,0 +1,53 @@
+<div ng-include="'views/helpNav.html'"></div>
+<h1>Shaft Options</h2>
+
+
+<form name="frmStep2"
+    ng-submit="submitStep2()" novalidate>
+
+    <section class="step2">
+
+	Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
+      <option value="">Select an option</option>
+	  <option value="0">Zero</option>
+	  <option value="1">One</option>
+	  <option value="2">Two</option>
+	</select>
+	
+    <p class="error validationerror"
+      ng-show="frmStep2.shaftType.$invalid && frmStep2.shaftType.$touched">
+      Shaft type is a required field</p>
+
+    <br/>
+
+    Shaft Flex: <select name="shaftFlex" ng-model="item.shaftFlex" ng-required="true">
+      <option value="">Select an option</option>
+	  <option value="0">Zero</option>
+	  <option value="1">One</option>
+	  <option value="2">Two</option>
+	</select>
+	
+    <p class="error validationerror"
+      ng-show="frmStep2.shaftFlex.$invalid && frmStep2.shaftFlex.$touched">
+      Shaft flex is a required field</p>
+
+    <br/>
+
+    Lie Angle: <select name="lieAngle" ng-model="item.lieAngle" ng-required="true">
+      <option value="">Select an option</option>
+	  <option value="0">Zero</option>
+	  <option value="1">One</option>
+	  <option value="2">Two</option>
+	</select>
+	
+    <p class="error validationerror"
+      ng-show="frmStep2.lieAngle.$invalid && frmStep2.lieAngle.$touched">
+      Lie Angle is a required field</p>
+
+	</section>
+
+	<button type="submit" class="btn"
+  		ng-disabled="frmStep2.$invalid">Next</button>
+  	<br/>
+  	<a ng-href="#/intro">Back to Intro</a>
+</form>

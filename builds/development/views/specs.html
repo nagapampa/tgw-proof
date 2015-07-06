@@ -1,9 +1,11 @@
+<h1>Item Name Here</h2>
+
 <form name="frmSpecs"
-    novalidate>
+    ng-submit="addToCart()" novalidate>
 
     <section class="itemSpecs">
 
-	    <h1>Select Customizations</h1>
+	    <h2>Select Customizations</h2>
 
 	    Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
 	      <option value="">Select an option</option>
@@ -47,6 +49,7 @@
 	<hr>
 
     <section class="itemTotal">
+    	<h2>Club Specifications and Cost</h2>
     	<ul>
     		<li>Shaft Type: {{item.shaftType}}</li>
     		<li>Shaft Flex: {{item.shaftFlex}}</li>
