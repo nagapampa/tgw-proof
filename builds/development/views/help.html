@@ -14,17 +14,15 @@
 	      <option ng-repeat="i in inchesMeasurement" value="{{i}}">{{i}}</option>
 		</select>''
 		
-	    <p class="error validationerror"
-	      ng-show="frmStep1.feet.$invalid && frmStep1.feet.$touched">
+	    <p ng-show="frmStep1.feet.$invalid && frmStep1.feet.$touched">
 	      Feet is a required field</p>
 
-	    <p class="error validationerror"
-	      ng-show="frmStep1.inches.$invalid && frmStep1.inches.$touched">
+	    <p ng-show="frmStep1.inches.$invalid && frmStep1.inches.$touched">
 	      Inches is a required field</p>
 
 	</section>
 
-	<button type="submit" class="btn"
+	<button type="submit" 
   		ng-disabled="frmStep1.$invalid">Next</button>
   	<br/>
   	<a ng-href="#/intro">Back to Intro</a>

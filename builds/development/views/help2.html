@@ -11,7 +11,7 @@
       <option ng-repeat="f in product.catalogEntryView[0].sKUs" value="{{f.uniqueID}}">{{f.shortDescription}}</option>
 	</select>
 	
-    <p class="error validationerror"
+    <p 
       ng-show="frmStep2.shaftType.$invalid && frmStep2.shaftType.$touched">
       Shaft type is a required field</p>
 
@@ -24,7 +24,7 @@
 	  <option value="2">Two</option>
 	</select>
 	
-    <p class="error validationerror"
+    <p 
       ng-show="frmStep2.shaftFlex.$invalid && frmStep2.shaftFlex.$touched">
       Shaft flex is a required field</p>
 
@@ -37,13 +37,13 @@
 	  <option value="2">Two</option>
 	</select>
 	
-    <p class="error validationerror"
+    <p 
       ng-show="frmStep2.lieAngle.$invalid && frmStep2.lieAngle.$touched">
       Lie Angle is a required field</p>
 
 	</section>
 
-	<button type="submit" class="btn"
+	<button type="submit" 
   		ng-disabled="frmStep2.$invalid">Next</button>
   	<br/>
   	<a ng-href="#/intro">Back to Intro</a>

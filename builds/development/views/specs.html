@@ -1,4 +1,4 @@
-<h1>Item Name Here</h2>
+<h1>{{product.catalogEntryView[0].shortDescription}}</h2>
 
 <form name="frmSpecs"
     ng-submit="addToCart()" novalidate>
@@ -8,38 +8,68 @@
 	    <h2>Select Customizations</h2>
 
 	    Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
-	      <option ng-repeat="f in product.catalogEntryView[0].sKUs" value="{{f.uniqueID}}">{{f.shortDescription}}</option>
+	      <option ng-repeat="attribute in shaftTypeValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
-	    <p class="error validationerror"
+	    <p 
 	      ng-show="frmSpecs.shaftType.$invalid && frmSpecs.shaftType.$touched">
 	      Shaft type is a required field</p>
 
 	    <br/>
 
 	    Shaft Flex: <select name="shaftFlex" ng-model="item.shaftFlex" ng-required="true">
-	      <option value="">Select an option</option>
-		  <option value="0">Zero</option>
-		  <option value="1">One</option>
-		  <option value="2">Two</option>
+	      <option ng-repeat="attribute in shaftFlexValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
-	    <p class="error validationerror"
+	    <p 
 	      ng-show="frmSpecs.shaftFlex.$invalid && frmSpecs.shaftFlex.$touched">
 	      Shaft flex is a required field</p>
 
 	    <br/>
 
 	    Lie Angle: <select name="lieAngle" ng-model="item.lieAngle" ng-required="true">
-	      <option value="">Select an option</option>
-		  <option value="0">Zero</option>
-		  <option value="1">One</option>
-		  <option value="2">Two</option>
+	      <option ng-repeat="attribute in lieAngleValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
-	    <p class="error validationerror"
+	    <p 
 	      ng-show="frmSpecs.lieAngle.$invalid && frmSpecs.lieAngle.$touched">
 	      Lie Angle is a required field</p>
+
+	    <br/>
+
+	    Shaft Length: <select name="shaftLength" ng-model="item.shaftLength" ng-required="true">
+	      <option ng-repeat="attribute in shaftLengthValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
+		</select>
+		
+	    <p 
+	      ng-show="frmSpecs.shaftLength.$invalid && frmSpecs.shaftLength.$touched">
+	      Shaft Length is a required field</p>
+
+	    <br/>
+
+	    Grip: <select name="grip" ng-model="item.grip" ng-required="true">
+	      <option ng-repeat="attribute in gripValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
+		</select>
+		
+	    <p 
+	      ng-show="frmSpecs.grip.$invalid && frmSpecs.grip.$touched">
+	      Grip is a required field</p>
+
+	     <br/>
+
+	     Grip Size: <select name="gripSize" ng-model="item.gripSize" ng-required="true">
+	      <option ng-repeat="attribute in gripSizeValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
+		</select>
+		
+	    <p 
+	      ng-show="frmSpecs.gripSize.$invalid && frmSpecs.gripSize.$touched">
+	      Grip Size is a required field</p>
+
+	     <br/>
+
+	    Clubs:
+	    <input type="radio" ng-model="item.club" value="9.0">9.0
+	    <input type="radio" ng-model="item.club" value="10.5">10.5
 
 	</section>
 
@@ -51,12 +81,16 @@
     		<li>Shaft Type: {{item.shaftType}}</li>
     		<li>Shaft Flex: {{item.shaftFlex}}</li>
     		<li>Lie Angle: {{item.lieAngle}}</li>
+    		<li>Shaft Length: {{item.shaftLength}}</li>
+    		<li>Grip: {{item.grip}}</li>
+    		<li>Grip Size: {{item.gripSize}}</li>
+    		<li>Clubs: {{item.club}}</li>
     	</ul>
     </section>
 
 	<button type="submit" class="btn"
   		ng-disabled="frmSpecs.$invalid">Add to Cart</button>
-  	<br/>
+  	<br/><br/>
   	<a ng-href="#/intro">Back to Intro</a>
 </form>	
 

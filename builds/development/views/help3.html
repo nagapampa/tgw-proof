@@ -14,7 +14,7 @@
 	  <option value="2">Two</option>
 	</select>
 	
-    <p class="error validationerror"
+    <p 
       ng-show="frmStep3.grip.$invalid && frmStep3.grip.$touched">
       Grip is a required field</p>
 
@@ -27,13 +27,13 @@
 	  <option value="2">Two</option>
 	</select>
 	
-    <p class="error validationerror"
+    <p 
       ng-show="frmStep3.gripSize.$invalid && frmStep3.gripSize.$touched">
       Grip Size is a required field</p>
 
 	</section>
 
-	<button type="submit" class="btn"
+	<button type="submit"
   		ng-disabled="frmStep3.$invalid">Next</button>
   	<br/>
   	<a ng-href="#/intro">Back to Intro</a>

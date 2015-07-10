@@ -4,12 +4,13 @@ tgwClubCustomizer.controller('HelpController',
   $scope.feetMeasurement = ['4','5','6','7'];
   $scope.inchesMeasurement = ['0','1','2','3','4','5','6','7','8','9','10','11'];
 
-   $http.get('js/product.json').success(function(data) {
+  $http.get('js/product.json').success(function(data) {
     $scope.product = data;
     console.log(data);
   });
   
   $scope.submitStep1 = function() {
+    console.log($scope.profile.feet);
     $location.path('/help/2');
   }; //
 
