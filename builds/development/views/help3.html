@@ -7,29 +7,25 @@
 
     <section class="step3">
 
-	Grip: <select name="grip" ng-model="item.grip" ng-required="true">
-      <option value="">Select an option</option>
-	  <option value="0">Zero</option>
-	  <option value="1">One</option>
-	  <option value="2">Two</option>
-	</select>
-	
-    <p 
-      ng-show="frmStep3.grip.$invalid && frmStep3.grip.$touched">
-      Grip is a required field</p>
+    	Hand Length: 
+      <select name="handLength" ng-model="handLength" ng-required="true">
+        <option ng-repeat="h in handLengthMeasurement" value="{{h}}">{{h}}</option>   
+    	</select>''
+    	
+      <p 
+        ng-show="frmStep3.handLength.$invalid && frmStep3.handLength.$touched">
+        Hand Length is a required field</p>
 
-    <br/>
+      <br/>
 
-    Grip Size: <select name="gripSize" ng-model="item.gripSize" ng-required="true">
-      <option value="">Select an option</option>
-	  <option value="0">Zero</option>
-	  <option value="1">One</option>
-	  <option value="2">Two</option>
-	</select>
-	
-    <p 
-      ng-show="frmStep3.gripSize.$invalid && frmStep3.gripSize.$touched">
-      Grip Size is a required field</p>
+      Longest Finger:
+      <select name="longestFinger" ng-model="longestFinger" ng-required="true">
+        <option ng-repeat="f in longestFingerMeasurement" value="{{f}}">{{f}}</option>   
+      </select>''
+      
+      <p 
+        ng-show="frmStep3.longestFinger.$invalid && frmStep3.longestFinger.$touched">
+        Longest Finger is a required field</p>
 
 	</section>
 

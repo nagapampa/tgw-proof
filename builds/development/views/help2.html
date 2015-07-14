@@ -7,39 +7,13 @@
 
     <section class="step2">
 
-	Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
-      <option ng-repeat="f in product.catalogEntryView[0].sKUs" value="{{f.uniqueID}}">{{f.shortDescription}}</option>
-	</select>
-	
-    <p 
-      ng-show="frmStep2.shaftType.$invalid && frmStep2.shaftType.$touched">
-      Shaft type is a required field</p>
-
-    <br/>
-
-    Shaft Flex: <select name="shaftFlex" ng-model="item.shaftFlex" ng-required="true">
-      <option value="">Select an option</option>
-	  <option value="0">Zero</option>
-	  <option value="1">One</option>
-	  <option value="2">Two</option>
-	</select>
-	
-    <p 
-      ng-show="frmStep2.shaftFlex.$invalid && frmStep2.shaftFlex.$touched">
-      Shaft flex is a required field</p>
-
-    <br/>
-
-    Lie Angle: <select name="lieAngle" ng-model="item.lieAngle" ng-required="true">
-      <option value="">Select an option</option>
-	  <option value="0">Zero</option>
-	  <option value="1">One</option>
-	  <option value="2">Two</option>
-	</select>
-	
-    <p 
-      ng-show="frmStep2.lieAngle.$invalid && frmStep2.lieAngle.$touched">
-      Lie Angle is a required field</p>
+    	What is your desired ball trajectory: 
+      <select name="trajectory" ng-model="trajectory" ng-required="true">
+          <option ng-repeat="t in trajectoryMeasurement" value="{{t}}">{{t}}</option>
+    	</select>
+    	
+      <p ng-show="frmStep2.trajectory.$invalid && frmStep2.trajectory.$touched">
+        Average Swing Speed is a required field</p>
 
 	</section>
 

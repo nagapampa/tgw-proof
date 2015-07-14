@@ -7,11 +7,11 @@
     <section class="step1">
 
 	    Select your height: 
-	    <select name="feet" ng-model="profile.feet" ng-required="true">
-	      <option ng-repeat="f in feetMeasurement" value="{{f}}">{{f}}</option>
+	    <select name="feet" ng-model="feet" ng-required="true">
+	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == feet}}">{{f}}</option>
 		</select>'
-		<select name="inches" ng-model="profile.inches" ng-required="true">
-	      <option ng-repeat="i in inchesMeasurement" value="{{i}}">{{i}}</option>
+		<select name="inches" ng-model="inches" ng-required="true">
+	      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == inches}}">{{i}}</option>
 		</select>''
 		
 	    <p ng-show="frmStep1.feet.$invalid && frmStep1.feet.$touched">
@@ -19,6 +19,19 @@
 
 	    <p ng-show="frmStep1.inches.$invalid && frmStep1.inches.$touched">
 	      Inches is a required field</p>
+
+	    <br/>
+
+	    Select your wrist to floor: 
+	    <select name="wrist" ng-model="wrist" ng-required="true">
+	      <option ng-repeat="w in wristMeasurement" value="{{w}}">{{w}}</option>
+		</select>''
+		<select name="wrist2" ng-model="wrist2">
+	      <option ng-repeat="w in wrist2Measurement" value="{{w}}">{{w}}</option>
+		</select>
+		
+	    <p ng-show="frmStep1.wrist.$invalid && frmStep1.wrist.$touched">
+	      Wrist to floor is a required field</p>
 
 	</section>
 

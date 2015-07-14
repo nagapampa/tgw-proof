@@ -1,5 +1,11 @@
 var tgwClubCustomizer = angular.module ('tgwClubCustomizer',  ['ngRoute']);
 
+var tgwClubCustomizer = angular.module('tgwClubCustomizer', [
+  'ngRoute',
+  'tgwCustomizerControllers',
+  'CustomizerService'
+]);
+
 tgwClubCustomizer.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
     when('/help', {
