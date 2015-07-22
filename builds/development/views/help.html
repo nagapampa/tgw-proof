@@ -6,7 +6,7 @@
 
     <section class="step1">
 
-	    Select your height: 
+    	Select your height: 
 	    <select name="feet" ng-model="feet" ng-required="true">
 	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == feet}}">{{f}}</option>
 		</select>'
@@ -24,14 +24,26 @@
 
 	    Select your wrist to floor: 
 	    <select name="wrist" ng-model="wrist" ng-required="true">
-	      <option ng-repeat="w in wristMeasurement" value="{{w}}">{{w}}</option>
+	      <option ng-repeat="w in wristMeasurement" value="{{w}}" ng-selected="{{w == wrist}}">{{w}}</option>
 		</select>''
 		<select name="wrist2" ng-model="wrist2">
-	      <option ng-repeat="w in wrist2Measurement" value="{{w}}">{{w}}</option>
+	      <option ng-repeat="w in wrist2Measurement" value="{{w}}" ng-selected="{{w == wrist2}}">{{w}}</option>
 		</select>
 		
 	    <p ng-show="frmStep1.wrist.$invalid && frmStep1.wrist.$touched">
 	      Wrist to floor is a required field</p>
+
+	    <br/>
+
+	    Golf Handedness:
+	    <input type="radio" ng-model="dexterity" value="right">Right
+	    <input type="radio" ng-model="dexterity" value="left">Left
+
+	    <br/>
+
+	    Gender:
+	    <input type="radio" ng-model="gender" value="male">Male
+	    <input type="radio" ng-model="gender" value="female">Female
 
 	</section>
 

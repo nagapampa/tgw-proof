@@ -1,3 +1,7 @@
+<div ng-show="helpPage">
+    <div ng-include="'views/helpNav.html'"></div>
+</div>
+
 <h1>{{product.catalogEntryView[0].shortDescription}}</h2>
 
 <form name="frmSpecs"
@@ -7,7 +11,7 @@
 
 	    <h2>Select Customizations</h2>
 
-	    Shaft Type: <select name="shaftType" ng-model="item.shaftType" ng-required="true">
+	    Shaft Type: <select name="shaftType" ng-model="shaftType" ng-required="true">
 	      <option ng-repeat="attribute in shaftTypeValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
@@ -17,7 +21,7 @@
 
 	    <br/>
 
-	    Shaft Flex: <select name="shaftFlex" ng-model="item.shaftFlex" ng-required="true">
+	    Shaft Flex: <select name="shaftFlex" ng-model="shaftFlex" ng-required="true">
 	      <option ng-repeat="attribute in shaftFlexValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
@@ -27,7 +31,7 @@
 
 	    <br/>
 
-	    Lie Angle: <select name="lieAngle" ng-model="item.lieAngle" ng-required="true">
+	    Lie Angle: <select name="lieAngle" ng-model="lieAngle" ng-required="true">
 	      <option ng-repeat="attribute in lieAngleValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
@@ -37,7 +41,7 @@
 
 	    <br/>
 
-	    Shaft Length: <select name="shaftLength" ng-model="item.shaftLength" ng-required="true">
+	    Shaft Length: <select name="shaftLength" ng-model="shaftLength" ng-required="true">
 	      <option ng-repeat="attribute in shaftLengthValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
@@ -47,7 +51,7 @@
 
 	    <br/>
 
-	    Grip: <select name="grip" ng-model="item.grip" ng-required="true">
+	    Grip: <select name="grip" ng-model="grip" ng-required="true">
 	      <option ng-repeat="attribute in gripValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
@@ -57,7 +61,7 @@
 
 	     <br/>
 
-	     Grip Size: <select name="gripSize" ng-model="item.gripSize" ng-required="true">
+	     Grip Size: <select name="gripSize" ng-model="gripSize" ng-required="true">
 	      <option ng-repeat="attribute in gripSizeValues[0].values" value="{{attribute.value}}">{{attribute.value}}</option>
 		</select>
 		
@@ -68,8 +72,14 @@
 	     <br/>
 
 	    Clubs:
-	    <input type="radio" ng-model="item.club" value="9.0">9.0
-	    <input type="radio" ng-model="item.club" value="10.5">10.5
+	    <input type="radio" ng-model="clubs" value="9.0">9.0
+	    <input type="radio" ng-model="clubs" value="10.5">10.5
+
+	    <br/>
+
+	    Dexterity:
+	    <input type="radio" ng-model="dexterity" value="right">Right
+	    <input type="radio" ng-model="dexterity" value="left">Left
 
 	</section>
 
@@ -78,13 +88,14 @@
     <section class="itemTotal">
     	<h2>Club Specifications and Cost</h2>
     	<ul>
-    		<li>Shaft Type: {{item.shaftType}}</li>
-    		<li>Shaft Flex: {{item.shaftFlex}}</li>
-    		<li>Lie Angle: {{item.lieAngle}}</li>
-    		<li>Shaft Length: {{item.shaftLength}}</li>
-    		<li>Grip: {{item.grip}}</li>
-    		<li>Grip Size: {{item.gripSize}}</li>
-    		<li>Clubs: {{item.club}}</li>
+    		<li>Shaft Type: {{shaftType}}</li>
+    		<li>Shaft Flex: {{shaftFlex}}</li>
+    		<li>Lie Angle: {{lieAngle}}</li>
+    		<li>Shaft Length: {{shaftLength}}</li>
+    		<li>Grip: {{grip}}</li>
+    		<li>Grip Size: {{gripSize}}</li>
+    		<li>Clubs: {{clubs}}</li>
+    		<li>Dexterity: {{dexterity}}</li>
     	</ul>
     	Base Club Price
     	<br/>

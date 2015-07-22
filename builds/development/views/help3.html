@@ -9,7 +9,7 @@
 
     	Hand Length: 
       <select name="handLength" ng-model="handLength" ng-required="true">
-        <option ng-repeat="h in handLengthMeasurement" value="{{h}}">{{h}}</option>   
+        <option ng-repeat="h in handLengthMeasurement" value="{{h}}" ng-selected="{{h == handLength}}">{{h}}</option>   
     	</select>''
     	
       <p 
@@ -20,7 +20,7 @@
 
       Longest Finger:
       <select name="longestFinger" ng-model="longestFinger" ng-required="true">
-        <option ng-repeat="f in longestFingerMeasurement" value="{{f}}">{{f}}</option>   
+        <option ng-repeat="f in longestFingerMeasurement" value="{{f}}" ng-selected="{{f == longestFinger}}">{{f}}</option>   
       </select>''
       
       <p 

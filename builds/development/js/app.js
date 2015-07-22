@@ -15,6 +15,9 @@ tgwClubCustomizer.config(['$routeProvider', function($routeProvider) {
     when('/specs', {
       templateUrl: 'views/specs.html',
       controller:  'SpecsController'
+    }).when('/helpReview', {
+      templateUrl: 'views/specs.html',
+      controller:  'HelpController'
     }).
     when('/intro', {
       templateUrl: 'views/intro.html'

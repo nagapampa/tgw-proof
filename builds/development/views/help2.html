@@ -7,13 +7,13 @@
 
     <section class="step2">
 
-    	What is your desired ball trajectory: 
-      <select name="trajectory" ng-model="trajectory" ng-required="true">
-          <option ng-repeat="t in trajectoryMeasurement" value="{{t}}">{{t}}</option>
+    	{{distanceQuestion}}: 
+      <select name="driverDistance" ng-model="driverDistance" ng-required="true">
+          <option ng-repeat="t in trajectoryMeasurement" value="{{t}}" ng-selected="{{t == driverDistance}}">{{t}}</option>
     	</select>
     	
-      <p ng-show="frmStep2.trajectory.$invalid && frmStep2.trajectory.$touched">
-        Average Swing Speed is a required field</p>
+      <p ng-show="frmStep2.driverDistance.$invalid && frmStep2.driverDistance.$touched">
+        {{distanceQuestion}} is a required field</p>
 
 	</section>
 
