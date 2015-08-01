@@ -6,10 +6,12 @@ var CustomizerService = angular.module('CustomizerService', [])
     var wrist = '';
     var wrist2 = '';
     var dexterity = 'right';
-    var gender = 'male';
     var driverDistance = '';
     var handLength = '';
     var longestFinger = '';
+    var shaftType = '';
+    var trajectory = '';
+    var clubs = '';
     return {
         getFeet: function () {
             return feet;
@@ -41,12 +43,6 @@ var CustomizerService = angular.module('CustomizerService', [])
         setDexterity: function (value) {
             dexterity = value;
         },
-        getGender: function () {
-            return gender;
-        },
-        setGender: function (value) {
-            gender = value;
-        },
         getDriverDistance: function () {
             return driverDistance;
         },
@@ -64,6 +60,24 @@ var CustomizerService = angular.module('CustomizerService', [])
         },
         setLongestFinger: function (value) {
             longestFinger = value;
+        },
+        getShaftType: function () {
+            return shaftType;
+        },
+        setShaftType: function (value) {
+            shaftType = value;
+        },
+        getTrajectory: function () {
+            return trajectory;
+        },
+        setTrajectory: function (value) {
+            trajectory = value;
+        },
+        setClubs: function () {
+            return clubs;
+        },
+        getClubs: function (value) {
+            clubs = value;
         }
     };
 });

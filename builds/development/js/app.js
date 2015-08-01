@@ -8,7 +8,7 @@ var tgwClubCustomizer = angular.module('tgwClubCustomizer', [
 
 tgwClubCustomizer.config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-    when('/help', {
+    when('/fittingGuide', {
       templateUrl: 'views/help.html',
       controller: 'HelpController'
     }).
