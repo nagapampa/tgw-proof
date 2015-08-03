@@ -2,42 +2,15 @@
 
 var tgwCustomizerControllers = angular.module('tgwCustomizerControllers', []);
 
-tgwCustomizerControllers.controller('SpecsController', ['$scope', '$http', 'Customizer',
+tgwCustomizerControllers.controller('SpecsController', ['$scope', '$http', 'Customizer', 'mConfigurationOptions',
   
-  function($scope, $http, Customizer) {
-    
+  function($scope, $http, Customizer, mConfigurationOptions) {
+
+    //get product data from JSON file
     $http.get('js/product.json').success(function(data) {
-      $scope.product = data;
-      $scope.attributes = data.catalogEntryView[0].x_attributes;
-
-      // get arrays of attribute types
-      $scope.shaftTypeValues = [];
-      $scope.shaftFlexValues = [];
-      $scope.lieAngleValues = [];
-      $scope.shaftLengthValues = [];
-      $scope.gripValues = [];
-      $scope.gripSizeValues = [];
-      $scope.clubsValues = [];
-      angular.forEach($scope.attributes, function(x_attributes) {
-            if (x_attributes.identifier == 'p_shaftType') 
-                $scope.shaftTypeValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_shaftFlex') 
-                $scope.shaftFlexValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_lieAngle') 
-                $scope.lieAngleValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_shaftLength') 
-                $scope.shaftLengthValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_grip') 
-                $scope.gripValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_gripSize') 
-                $scope.gripSizeValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_clubs') 
-                $scope.clubsValues.push(x_attributes);
-        });
-
-        $scope.dexterity = 'right';
-
-    });
+      //populate configuration values
+      $scope.configValues = mConfigurationOptions.getProduct(data);
+    }); 
     
     $scope.addToCart = function() {
       console.log('Add to cart');
@@ -45,39 +18,18 @@ tgwCustomizerControllers.controller('SpecsController', ['$scope', '$http', 'Cust
 
   }]);
 
-tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$http', 'Customizer',
-  function($scope, $location, $http, Customizer) {
+tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$http', 'Customizer', 'mConfigurationOptions',
+  function($scope, $location, $http, Customizer, mConfigurationOptions) {
 
-    //get the data from the .JSON
+    $scope.updateBackground = function($event){
+      console.log('element name '+  event.currentTarget.name);
+      console.log('element value '+  event.currentTarget.value);
+    }
+
+    //get product data from JSON file
     $http.get('js/product.json').success(function(data) {
-      $scope.product = data;
-
-      $scope.attributes = data.catalogEntryView[0].x_attributes;
-
-      // get arrays of attribute types
-      $scope.shaftTypeValues = [];
-      $scope.shaftFlexValues = [];
-      $scope.lieAngleValues = [];
-      $scope.shaftLengthValues = [];
-      $scope.gripValues = [];
-      $scope.gripSizeValues = [];
-      $scope.clubsValues = [];
-      angular.forEach($scope.attributes, function(x_attributes) {
-            if (x_attributes.identifier == 'p_shaftType') 
-                $scope.shaftTypeValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_shaftFlex') 
-                $scope.shaftFlexValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_lieAngle') 
-                $scope.lieAngleValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_shaftLength') 
-                $scope.shaftLengthValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_grip') 
-                $scope.gripValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_gripSize') 
-                $scope.gripSizeValues.push(x_attributes);
-            else if (x_attributes.identifier == 'p_clubs') 
-                $scope.clubsValues.push(x_attributes);
-        });
+      //populate configuration values
+      $scope.configValues = mConfigurationOptions.getProduct(data);
 
       //preset values
       $scope.helpPage = 'true';

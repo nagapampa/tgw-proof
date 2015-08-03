@@ -8,18 +8,18 @@
     <section class="step3">
 
       Select a Grip Type: 
-      <select name="gripType" ng-model="gripType" ng-required="true">
-          <option ng-repeat="g in gripValues[0].values" value="{{g.uniqueID}}" ng-selected="{{g.uniqueID = gripType}}">{{g.value}}</option>
+      <select name="gripType" ng-model="gripType" ng-required="true" ng-change="updateBackground($element)">
+          <option ng-repeat="g in configValues.gripValues[0].values" value="{{g.uniqueID}}" ng-selected="{{g.uniqueID = gripType}}">{{g.value}}</option>
       </select>
       
       <p 
-        ng-show="frmStep3.gripType.$invalid && frmStep2.gripType.$touched">
+        ng-show="frmStep3.gripType.$invalid && frmStep3.gripType.$touched">
         Grip type is a required field</p>
 
       <br/>
 
     	Hand Length: 
-      <select name="handLength" ng-model="handLength" ng-required="true">
+      <select name="handLength" ng-model="handLength" ng-required="true" ng-change="updateBackground($element)">
         <option ng-repeat="h in handLengthMeasurement" value="{{h}}" ng-selected="{{h == handLength}}">{{h}}</option>   
     	</select>''
     	
@@ -30,7 +30,7 @@
       <br/>
 
       Longest Finger:
-      <select name="longestFinger" ng-model="longestFinger" ng-required="true">
+      <select name="longestFinger" ng-model="longestFinger" ng-required="true" ng-change="updateBackground($element)">
         <option ng-repeat="f in longestFingerMeasurement" value="{{f}}" ng-selected="{{f == longestFinger}}">{{f}}</option>   
       </select>''
       

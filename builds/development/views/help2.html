@@ -8,8 +8,8 @@
     <section class="step2">
 
       Select a Shaft Type: 
-      <select name="shaftType" ng-model="shaftType" ng-required="true">
-          <option ng-repeat="attribute in shaftTypeValues[0].values" value="{{attribute.uniqueID}}" ng-selected="{{attribute.uniqueID == shaftType}}">{{attribute.value}}</option>
+      <select name="shaftType" ng-model="shaftType" ng-required="true" ng-change="updateBackground($element)">
+          <option ng-repeat="attribute in configValues.shaftTypeValues[0].values" value="{{attribute.uniqueID}}" ng-selected="{{attribute.uniqueID == shaftType}}">{{attribute.value}}</option>
       </select>
       
       <p 
@@ -19,7 +19,7 @@
       <br/>
 
     	{{distanceQuestion}}: 
-      <select name="driverDistance" ng-model="driverDistance" ng-required="true">
+      <select name="driverDistance" ng-model="driverDistance" ng-required="true" ng-change="updateBackground($element)">
           <option ng-repeat="t in trajectoryMeasurement" value="{{t}}" ng-selected="{{t == driverDistance}}">{{t}}</option>
     	</select>
     	
@@ -29,7 +29,7 @@
       <br/>
 
       What Is Your Desired Ball Trajectory?
-      <select name="trajectory" ng-model="trajectory" ng-required="true">
+      <select name="trajectory" ng-model="trajectory" ng-required="true" ng-change="updateBackground($element)">
           <option ng-repeat="t in trajectoryMeasurement" value="{{t}}">{{t}}</option>
       </select>
 

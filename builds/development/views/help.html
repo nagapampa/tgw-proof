@@ -6,17 +6,17 @@
 
     <section class="step1">
 
-	    Dexterity:
+		Dexterity:
 	    <input type="radio" ng-model="dexterity" value="right">Right
 	    <input type="radio" ng-model="dexterity" value="left">Left
 
 	    <br/>
 
     	Select your height: 
-	    <select name="feet" ng-model="feet" ng-required="true">
+	    <select name="feet" ng-model="feet" ng-required="true" ng-change="updateBackground($element)">
 	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == feet}}">{{f}}</option>
 		</select>'
-		<select name="inches" ng-model="inches" ng-required="true">
+		<select name="inches" ng-model="inches" ng-required="true" ng-change="updateBackground($element)">
 	      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == inches}}">{{i}}</option>
 		</select>''
 		
@@ -29,10 +29,10 @@
 	    <br/>
 
 	    Select your wrist to floor: 
-	    <select name="wrist" ng-model="wrist" ng-required="true">
+	    <select name="wrist" ng-model="wrist" ng-required="true" ng-change="updateBackground($element)">
 	      <option ng-repeat="w in wristMeasurement" value="{{w}}" ng-selected="{{w == wrist}}">{{w}}</option>
 		</select>''
-		<select name="wrist2" ng-model="wrist2">
+		<select name="wrist2" ng-model="wrist2" ng-change="updateBackground($element)">
 	      <option ng-repeat="w in wrist2Measurement" value="{{w}}" ng-selected="{{w == wrist2}}">{{w}}</option>
 		</select>
 		
