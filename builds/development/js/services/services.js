@@ -12,6 +12,7 @@ var CustomizerService = angular.module('CustomizerService', [])
     var shaftType = '';
     var trajectory = '';
     var clubs = '';
+    var gripType = '';
     return {
         getFeet: function () {
             return feet;
@@ -78,6 +79,12 @@ var CustomizerService = angular.module('CustomizerService', [])
         },
         getClubs: function (value) {
             clubs = value;
+        },
+        setGripType: function () {
+            return gripType;
+        },
+        getGripType: function (value) {
+            gripType = value;
         }
     };
 });

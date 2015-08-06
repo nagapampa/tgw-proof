@@ -12,7 +12,7 @@
 	    <h2>Select Customizations</h2>
 
 	    Shaft Type: <select name="shaftType" ng-model="shaftType" ng-required="true">
-	      <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute.value}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute.value}}" ng-selected="{{attribute.uniqueID == shaftType}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -51,8 +51,8 @@
 
 	    <br/>
 
-	    Grip: <select name="grip" ng-model="grip" ng-required="true">
-	      <option ng-repeat="attribute in configValues.gripValues" value="{{attribute.value}}">{{attribute.value}}</option>
+	    Grip: <select name="gripType" ng-model="gripType" ng-required="true">
+	      <option ng-repeat="attribute in configValues.gripValues" value="{{attribute.value}}" ng-selected="{{attribute.uniqueID == gripType}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -98,7 +98,7 @@
     		<li>Shaft Flex: {{shaftFlex}}</li>
     		<li>Lie Angle: {{lieAngle}}</li>
     		<li>Shaft Length: {{shaftLength}}</li>
-    		<li>Grip: {{grip}}</li>
+    		<li>Grip: {{gripType}}</li>
     		<li>Grip Size: {{gripSize}}</li>
     		<li>Clubs: {{clubs}}</li>
     		<li>Dexterity: {{dexterity}}</li>

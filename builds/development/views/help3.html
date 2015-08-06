@@ -9,7 +9,7 @@
 
       Select a Grip Type: 
       <select name="gripType" ng-model="gripType" ng-required="true" ng-change="updateBackground($element)">
-          <option ng-repeat="g in configValues.gripValues" value="{{g.value}}" ng-selected="{{g.uniqueID = gripType}}">{{g.value}}</option>
+          <option ng-repeat="attribute in configValues.gripValues" value="{{attribute.uniqueID}}" ng-selected="{{attribute.uniqueID == gripType}}">{{attribute.value}}</option>
       </select>
       
       <p 

@@ -57,7 +57,7 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$
       $scope.longestFinger = Customizer.getLongestFinger();
       $scope.shaftType = Customizer.getShaftType();
       $scope.trajectory = Customizer.getTrajectory();
-
+      $scope.gripType = Customizer.getGripType();
     });
     
     $scope.submitStep1 = function() {
@@ -78,6 +78,7 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$
     }; //submitStep2
 
     $scope.submitStep3 = function() {
+      Customizer.setGripType($scope.gripType);
       Customizer.setHandLength($scope.handLength);
       Customizer.setLongestFinger($scope.longestFinger);
       $location.path('/helpReview');
