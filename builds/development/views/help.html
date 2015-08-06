@@ -7,16 +7,16 @@
     <section class="step1">
 
 		Dexterity:
-	    <input type="radio" ng-model="dexterity" value="right">Right
-	    <input type="radio" ng-model="dexterity" value="left">Left
+	    <input type="radio" ng-model="model.dexterity" value="right">Right
+	    <input type="radio" ng-model="model.dexterity" value="left">Left
 
 	    <br/>
 
     	Select your height: 
-	    <select name="feet" ng-model="feet" ng-required="true" ng-change="updateBackground($element)">
+	    <select name="feet" ng-model="model.feet" ng-required="true" ng-change="updateBackground($element)">
 	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == feet}}">{{f}}</option>
 		</select>'
-		<select name="inches" ng-model="inches" ng-required="true" ng-change="updateBackground($element)">
+		<select name="inches" ng-model="model.inches" ng-required="true" ng-change="updateBackground($element)">
 	      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == inches}}">{{i}}</option>
 		</select>''
 		
@@ -29,7 +29,7 @@
 	    <br/>
 
 	    Select your wrist to floor: 
-	    <select name="wrist" ng-model="wrist" ng-required="true" ng-change="updateBackground($element)">
+	    <select name="wrist" ng-model="model.wrist" ng-required="true" ng-change="updateBackground($element)">
 	      <option ng-repeat="attribute in attributeValues.wristToFloorValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == wrist}}">{{attribute.attrValue}}</option>
 		</select>
 		
@@ -39,8 +39,8 @@
 	    <br/>
 
 	    Additional Clubs Desired:
-	    <label ng-repeat="club in clubsValues[0].values">
-	        <input type="checkbox" ng-model="clubs[club]"> {{club.value}} 
+	    <label ng-repeat="club in configValues.clubsValues">
+	        <input type="checkbox" ng-model="model.clubs" value="{{club.value}}"> {{club.value}} 
 	    </label>
 
 	</section>

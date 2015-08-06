@@ -3,8 +3,6 @@ var CustomizerService = angular.module('CustomizerService', [])
     
     var feet = '';
     var inches = '';
-    var wrist = '';
-    var wrist2 = '';
     var dexterity = 'right';
     var driverDistance = '';
     var handLength = '';
@@ -13,6 +11,8 @@ var CustomizerService = angular.module('CustomizerService', [])
     var trajectory = '';
     var clubs = '';
     var gripType = '';
+    var lieAngle = '';
+    var wrist = '';
     return {
         getFeet: function () {
             return feet;
@@ -25,18 +25,6 @@ var CustomizerService = angular.module('CustomizerService', [])
         },
         setInches: function (value) {
             inches = value;
-        },
-        getWrist: function () {
-            return wrist;
-        },
-        setWrist: function (value) {
-            wrist = value;
-        },
-        getWrist2: function () {
-            return wrist2;
-        },
-        setWrist2: function (value) {
-            wrist2 = value;
         },
         getDexterity: function () {
             return dexterity;
@@ -85,6 +73,18 @@ var CustomizerService = angular.module('CustomizerService', [])
         },
         getGripType: function (value) {
             gripType = value;
+        },
+        setLieAngle: function () {
+            return lieAngle;
+        },
+        getLieAngle: function (value) {
+            lieAngle = value;
+        },
+        setWrist: function () {
+            return wrist;
+        },
+        getWrist: function (value) {
+            wrist = value;
         }
     };
 });

@@ -77,6 +77,18 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
             }); 
             attributeRelationships = new AttributeRelationships(wristToFloorValues, handLengthValues, heightValues, driverDistanceValues, yardClubValues); 
             return attributeRelationships; 
+        },
+
+        getLieAngle: function(p_wristtofloor) {
+            console.log('value passed: '+p_wristtofloor);
+            angular.forEach(wristToFloorValues, function(value, key) {
+                if(value.attrValue === p_wristtofloor){                    
+                    angular.forEach(value.arrRelationships, function(value, key) {
+                        console.log(value.attrValue);
+                        return value.attrValue;
+                    });
+                }
+            });
         }
     };
             
