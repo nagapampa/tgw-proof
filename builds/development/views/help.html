@@ -30,10 +30,7 @@
 
 	    Select your wrist to floor: 
 	    <select name="wrist" ng-model="wrist" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="w in wristMeasurement" value="{{w}}" ng-selected="{{w == wrist}}">{{w}}</option>
-		</select>''
-		<select name="wrist2" ng-model="wrist2" ng-change="updateBackground($element)">
-	      <option ng-repeat="w in wrist2Measurement" value="{{w}}" ng-selected="{{w == wrist2}}">{{w}}</option>
+	      <option ng-repeat="attribute in attributeValues.wristToFloorValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == wrist}}">{{attribute.attrValue}}</option>
 		</select>
 		
 	    <p ng-show="frmStep1.wrist.$invalid && frmStep1.wrist.$touched">

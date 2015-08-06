@@ -9,7 +9,7 @@
 
       Select a Grip Type: 
       <select name="gripType" ng-model="gripType" ng-required="true" ng-change="updateBackground($element)">
-          <option ng-repeat="g in configValues.gripValues[0].values" value="{{g.uniqueID}}" ng-selected="{{g.uniqueID = gripType}}">{{g.value}}</option>
+          <option ng-repeat="g in configValues.gripValues" value="{{g.value}}" ng-selected="{{g.uniqueID = gripType}}">{{g.value}}</option>
       </select>
       
       <p 
@@ -20,8 +20,8 @@
 
     	Hand Length: 
       <select name="handLength" ng-model="handLength" ng-required="true" ng-change="updateBackground($element)">
-        <option ng-repeat="h in handLengthMeasurement" value="{{h}}" ng-selected="{{h == handLength}}">{{h}}</option>   
-    	</select>''
+        <option ng-repeat="attribute in attributeValues.handLengthValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == handLength}}">{{attribute.attrValue}}</option>   
+    	</select>
     	
       <p 
         ng-show="frmStep3.handLength.$invalid && frmStep3.handLength.$touched">

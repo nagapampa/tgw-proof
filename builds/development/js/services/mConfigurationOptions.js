@@ -16,6 +16,25 @@ var mConfigurationOptions = angular.module('mConfigurationOptions', [])
 
     var product;
 
+    //create an Attribute class
+    var Attribute = function(sequence, value, field3, identifier, uniqueID){
+        this.sequence = sequence;
+        this.value = value;
+        this.field3 = field3;
+        this.identifier = identifier;
+        this.uniqueID = uniqueID;
+    };
+
+    //using the JSON string passed in, loop through the 'values' array and create new Attribute objects
+    var setAttributeArray = function (attrs){
+        var tempAttrs = [];
+        angular.forEach(attrs.values, function(x_attribute) {
+            attr = new Attribute(x_attribute.sequence, x_attribute.value, x_attribute.field3, x_attribute.identifier, x_attribute.uniqueID);
+            tempAttrs.push(attr);
+        }); 
+        return tempAttrs;
+    };
+
     //declare drop down values arrays
     var shaftTypeValues = [];
     var shaftFlexValues = [];
@@ -28,21 +47,30 @@ var mConfigurationOptions = angular.module('mConfigurationOptions', [])
 
     return {
         getProduct: function (data) {
+            //reset to empty to prevent duplicate values
+            shaftTypeValues = [];
+            shaftFlexValues = [];
+            lieAngleValues = [];
+            shaftLengthValues = [];
+            gripValues = [];
+            gripSizeValues = [];
+            clubsValues = [];
+
             angular.forEach(data.catalogEntryView[0].x_attributes, function(x_attributes) {
                 if (x_attributes.identifier == 'p_shaftType') 
-                    shaftTypeValues.push(x_attributes);
+                    shaftTypeValues = setAttributeArray(x_attributes);
                 else if (x_attributes.identifier == 'p_shaftFlex') 
-                    shaftFlexValues.push(x_attributes);
+                    shaftFlexValues = setAttributeArray(x_attributes);
                 else if (x_attributes.identifier == 'p_lieAngle') 
-                    lieAngleValues.push(x_attributes);
+                    lieAngleValues = setAttributeArray(x_attributes);
                 else if (x_attributes.identifier == 'p_shaftLength') 
-                    shaftLengthValues.push(x_attributes);
+                    shaftLengthValues = setAttributeArray(x_attributes);
                 else if (x_attributes.identifier == 'p_grip') 
-                    gripValues.push(x_attributes);
+                    gripValues = setAttributeArray(x_attributes);
                 else if (x_attributes.identifier == 'p_gripSize') 
-                    gripSizeValues.push(x_attributes);
+                    gripSizeValues = setAttributeArray(x_attributes);
                 else if (x_attributes.identifier == 'p_clubs') 
-                    clubsValues.push(x_attributes);
+                    clubsValues = setAttributeArray(x_attributes);
             });   
 
             product = new Product(data, shaftTypeValues, shaftFlexValues, lieAngleValues, shaftLengthValues, gripValues, gripSizeValues, clubsValues); 

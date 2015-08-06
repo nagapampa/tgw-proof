@@ -6,7 +6,7 @@ tgwCustomizerControllers.controller('SpecsController', ['$scope', '$http', 'Cust
   
   function($scope, $http, Customizer, mConfigurationOptions) {
 
-    //get product data from JSON file
+    //get product configuration data from JSON file
     $http.get('js/product.json').success(function(data) {
       //populate configuration values
       $scope.configValues = mConfigurationOptions.getProduct(data);
@@ -18,32 +18,32 @@ tgwCustomizerControllers.controller('SpecsController', ['$scope', '$http', 'Cust
 
   }]);
 
-tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$http', 'Customizer', 'mConfigurationOptions',
-  function($scope, $location, $http, Customizer, mConfigurationOptions) {
+tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$http', 'Customizer', 'mConfigurationOptions', 'mConfigurationRelationhips',
+  function($scope, $location, $http, Customizer, mConfigurationOptions, mConfigurationRelationhips) {
 
     $scope.updateBackground = function($event){
       console.log('element name '+  event.currentTarget.name);
       console.log('element value '+  event.currentTarget.value);
     }
 
-    //get product data from JSON file
+    //preset values
+    $scope.helpPage = 'true';
+
+    //get product configuration data from JSON file
     $http.get('js/product.json').success(function(data) {
       //populate configuration values
       $scope.configValues = mConfigurationOptions.getProduct(data);
+    });
 
-      //preset values
-      $scope.helpPage = 'true';
+  //get product relationship data from JSON file
+    $http.get('js/relationships.json').success(function(data) { 
+      //set the relationships
+      $scope.attributeValues = mConfigurationRelationhips.getRelationships(data);
 
       //set static dropdown values
-      $scope.feetMeasurement = ['4','5','6','7'];
+      $scope.feetMeasurement = ['4','5','6'];
       $scope.inchesMeasurement = ['0','1','2','3','4','5','6','7','8','9','10','11'];
-
-      $scope.wristMeasurement = ['24','25','26','27'];
-      $scope.wrist2Measurement = ['0', '1/4', '1/2', '3/4'];
-
       $scope.trajectoryMeasurement = ['Low', 'Low-Mid', 'Mid', 'Mid-High', 'High'];
-
-      $scope.handLengthMeasurement =['5', '6', '7', '8', '9'];
       $scope.longestFingerMeasurement =['2', '3', '4', '5'];
 
       //set Singleton values
@@ -58,12 +58,6 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$
       $scope.shaftType = Customizer.getShaftType();
       $scope.trajectory = Customizer.getTrajectory();
 
-      //set question for club type
-      if(true){
-        $scope.distanceQuestion = 'What iron do you hit 150 yards?';
-      }else{
-        $scope.distanceQuestion = 'How far do you hit your driver?';
-      }
     });
     
     $scope.submitStep1 = function() {

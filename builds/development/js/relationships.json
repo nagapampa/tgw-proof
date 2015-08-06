@@ -1,0 +1,237 @@
+{  
+   "recordSetTotalMatches":1,
+   "recordSetTotal":1,
+   "resourceName":"productview",
+   "resourceId":"http:\/\/localhost\/search\/resources\/store\/10151\/productview\/byId\/900151?catalogId=10001",
+   "recordSetStartNumber":0,
+   "recordSetComplete":"true",
+   "recordSetCount":1,
+   "catalogEntryView":[  
+      {  
+         "buyable":"false",
+         "price_USD":"0.0",
+         "catalogEntryTypeCode":"ItemBean",
+         "price":[  
+            {  
+               "value":"0.0",
+               "currency":"USD",
+               "usage":"Display",
+               "description":"L"
+            },
+            {  
+               "value":"",
+               "currency":"USD",
+               "usage":"Offer",
+               "description":"O"
+            }
+         ],
+         "resourceId":"http:\/\/localhost\/search\/resources\/store\/10151\/productview\/byId\/900151",
+         "name":"Configurator Global Attribute Value Relationship",
+         "parentCatalogGroupID":[  
+            "10001_70551",
+            "10051_71051"
+         ],
+         "hasSingleSKU":false,
+         "partNumber":"X_GlobalAttrValRel",
+         "uniqueID":"900151",
+         "storeID":"10051",
+         "x_attributeRelationship":[  
+            {  
+               "p_wristtofloor":{  
+                  "35\"":{  
+                     "p_lieangle":[  
+                        "1 degree upright"
+                     ]
+                  },
+                  "34\"":{  
+                     "p_lieangle":[  
+                        "Standard"
+                     ]
+                  },
+                  "33\"":{  
+                     "p_lieangle":[  
+                        "1 degree flat"
+                     ]
+                  },
+                  "32\"":{  
+                     "p_lieangle":[  
+                        "2 degrees flat"
+                     ]
+                  },
+                  "29\"":{  
+                     "p_lieangle":[  
+                        "3 degrees flat"
+                     ]
+                  },
+                  "39\"":{  
+                     "p_lieangle":[  
+                        "4 degrees upright"
+                     ]
+                  },
+                  "37\"":{  
+                     "p_lieangle":[  
+                        "3 degrees upright"
+                     ]
+                  },
+                  "36\"":{  
+                     "p_lieangle":[  
+                        "2 degrees upright"
+                     ]
+                  }
+               },
+               "p_handlength":{  
+                  "10\"":{  
+                     "p_gripsize":[  
+                        "+1\/16\""
+                     ]
+                  },
+                  "9\"":{  
+                     "p_gripsize":[  
+                        "+1\/32\""
+                     ]
+                  },
+                  "8\"":{  
+                     "p_gripsize":[  
+                        "Standard"
+                     ]
+                  },
+                  "7\"":{  
+                     "p_gripsize":[  
+                        "-1\/32\""
+                     ]
+                  },
+                  "6\"":{  
+                     "p_gripsize":[  
+                        "-1\/16\""
+                     ]
+                  },
+                  "5\"":{  
+                     "p_gripsize":[  
+                        "-1\/16\""
+                     ]
+                  }
+               },
+               "p_height":{  
+                  "4'10\"":{  
+                     "p_shaftlength":[  
+                        "-1 inch"
+                     ]
+                  },
+                  "6'3\"":{  
+                     "p_shaftlength":[  
+                        "+1\/2 inch"
+                     ]
+                  },
+                  "5'3\"":{  
+                     "p_shaftlength":[  
+                        "-1\/2 inch"
+                     ]
+                  },
+                  "6'1\"":{  
+                     "p_shaftlength":[  
+                        "+1\/4 inch"
+                     ]
+                  },
+                  "5'1\"":{  
+                     "p_shaftlength":[  
+                        "-3\/4 inch"
+                     ]
+                  },
+                  "6'8\"":{  
+                     "p_shaftlength":[  
+                        "+1 1\/2 inch"
+                     ]
+                  },
+                  "5'8\"":{  
+                     "p_shaftlength":[  
+                        "Standard"
+                     ]
+                  },
+                  "5'6\"":{  
+                     "p_shaftlength":[  
+                        "-1\/4 inch"
+                     ]
+                  },
+                  "6'5\"":{  
+                     "p_shaftlength":[  
+                        "+1 inch"
+                     ]
+                  }
+               },
+               "p_driverdistance":{  
+                  "0":{  
+                     "p_shaftflex":[  
+                        "Ladies flex"
+                     ]
+                  },
+                  "210":{  
+                     "p_shaftflex":[  
+                        "Regular flex"
+                     ]
+                  },
+                  "180":{  
+                     "p_shaftflex":[  
+                        "Soft Regular flex"
+                     ]
+                  },
+                  "270":{  
+                     "p_shaftflex":[  
+                        "x-stiff flex"
+                     ]
+                  },
+                  "240":{  
+                     "p_shaftflex":[  
+                        "Stiff flex"
+                     ]
+                  }
+               },
+               "p_150yardclub":{  
+                  "3\/4 iron":{  
+                     "p_shaftflex":[  
+                        "Soft Regular flex"
+                     ]
+                  },
+                  "8 iron":{  
+                     "p_shaftflex":[  
+                        "Stiff flex"
+                     ]
+                  },
+                  "7 iron":{  
+                     "p_shaftflex":[  
+                        "Stiff flex"
+                     ]
+                  },
+                  "6 iron":{  
+                     "p_shaftflex":[  
+                        "Regular flex"
+                     ]
+                  },
+                  "5 iron":{  
+                     "p_shaftflex":[  
+                        "Regular flex"
+                     ]
+                  },
+                  "PW":{  
+                     "p_shaftflex":[  
+                        "x-stiff flex"
+                     ]
+                  },
+                  "hybrid":{  
+                     "p_shaftflex":[  
+                        "Soft Regular flex"
+                     ]
+                  },
+                  "9 iron":{  
+                     "p_shaftflex":[  
+                        "x-stiff flex"
+                     ]
+                  }
+               }
+            }
+         ]
+      }
+   ],
+   "metaData":{  
+      "price":"2"
+   }
+}

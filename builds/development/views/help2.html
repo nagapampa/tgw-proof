@@ -9,7 +9,7 @@
 
       Select a Shaft Type: 
       <select name="shaftType" ng-model="shaftType" ng-required="true" ng-change="updateBackground($element)">
-          <option ng-repeat="attribute in configValues.shaftTypeValues[0].values" value="{{attribute.uniqueID}}" ng-selected="{{attribute.uniqueID == shaftType}}">{{attribute.value}}</option>
+          <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute.uniqueID}}" ng-selected="{{attribute.uniqueID == shaftType}}">{{attribute.value}}</option>
       </select>
       
       <p 
@@ -18,13 +18,13 @@
 
       <br/>
 
-    	{{distanceQuestion}}: 
+    	How Far Do You Hit Your Driver?: 
       <select name="driverDistance" ng-model="driverDistance" ng-required="true" ng-change="updateBackground($element)">
-          <option ng-repeat="t in trajectoryMeasurement" value="{{t}}" ng-selected="{{t == driverDistance}}">{{t}}</option>
+          <option ng-repeat="attribute in attributeValues.driverDistanceValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == driverDistance}}">{{attribute.attrValue}}</option>
     	</select>
     	
       <p ng-show="frmStep2.driverDistance.$invalid && frmStep2.driverDistance.$touched">
-        {{distanceQuestion}} is a required field</p>
+        Driver distance is a required field</p>
 
       <br/>
 

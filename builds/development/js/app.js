@@ -4,7 +4,8 @@ var tgwClubCustomizer = angular.module('tgwClubCustomizer', [
   'ngRoute',
   'tgwCustomizerControllers',
   'CustomizerService',
-  'mConfigurationOptions'
+  'mConfigurationOptions', 
+  'mConfigurationRelationhips'
 ]);
 
 tgwClubCustomizer.config(['$routeProvider', function($routeProvider) {
