@@ -34,6 +34,11 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
     var driverDistanceValues = []; //p_driverdistance
     var yardClubValues = []; //p_150yardclub
 
+    //declare values determined by relationships defined
+    var lieAngle;
+    var gripSize;
+    var shaftFlex;
+
     return {
         getRelationships: function (data) {
             //reset to empty to prevent duplicate values
@@ -80,15 +85,36 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
         },
 
         getLieAngle: function(p_wristtofloor) {
-            console.log('value passed: '+p_wristtofloor);
             angular.forEach(wristToFloorValues, function(value, key) {
                 if(value.attrValue === p_wristtofloor){                    
                     angular.forEach(value.arrRelationships, function(value, key) {
-                        console.log(value.attrValue);
-                        return value.attrValue;
+                        lieAngle = value.attrValue[0];
                     });
                 }
             });
+            return lieAngle;
+        },
+
+        getGripSize: function(p_handlength) {
+            angular.forEach(handLengthValues, function(value, key) {
+                if(value.attrValue === p_handlength){                    
+                    angular.forEach(value.arrRelationships, function(value, key) {
+                        gripSize = value.attrValue[0];
+                    });
+                }
+            });
+            return gripSize;
+        },
+
+        getShaftFlex: function(p_driverdistance) {
+            angular.forEach(driverDistanceValues, function(value, key) {
+                if(value.attrValue === p_driverdistance){                    
+                    angular.forEach(value.arrRelationships, function(value, key) {
+                        shaftFlex = value.attrValue[0];
+                    });
+                }
+            });
+            return shaftFlex;
         }
     };
             

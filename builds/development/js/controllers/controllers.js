@@ -48,20 +48,19 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$
     
     $scope.submitStep1 = function() {
       //set the Lie Angle based off the relationship defined in mConfigurationRelationhips
-      Customizer.setLieAngle(mConfigurationRelationhips.getLieAngle($scope.model.wrist));
-      console.log('lie angle set to '+Customizer.getLieAngle());
-      console.log($scope.model);
-
+      $scope.model.lieAngle = mConfigurationRelationhips.getLieAngle($scope.model.wrist)
       $location.path('/help/2');
     }; //submitStep1
 
     $scope.submitStep2 = function() {
-      console.log($scope.model);
+      //set the Lie Angle based off the relationship defined in mConfigurationRelationhips
+      $scope.model.shaftFlex = mConfigurationRelationhips.getShaftFlex($scope.model.driverDistance)
       $location.path('/help/3');
     }; //submitStep2
 
     $scope.submitStep3 = function() {
-      console.log($scope.model);
+      //set the Grip Size based off the relationship defined in mConfigurationRelationhips
+      $scope.model.gripSize = mConfigurationRelationhips.getGripSize($scope.model.handLength)
       $location.path('/helpReview');
     }; //submitStep3
 
