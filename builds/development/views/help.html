@@ -40,7 +40,7 @@
 
 	    Additional Clubs Desired:
 	    <label ng-repeat="club in configValues.clubsValues">
-	        <input type="checkbox" ng-model="model.clubs" value="{{club.value}}"> {{club.value}} 
+	        <input type="checkbox" name="clubs" ng-model="model.clubs" ng-change="updateBackground($element)"> {{club.value}} 
 	    </label>
 
 	</section>

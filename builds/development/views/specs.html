@@ -12,7 +12,7 @@
 	    <h2>Select Customizations</h2>
 
 	    Shaft Type: <select name="shaftType" ng-model="model.shaftType" ng-required="true">
-	      <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute.value}}" ng-selected="{{attribute.value == shaftType}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute.value}}" ng-selected="{{attribute.value == model.shaftType}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -22,7 +22,7 @@
 	    <br/>
 
 	    Shaft Flex: <select name="shaftFlex" ng-model="model.shaftFlex" ng-required="true">
-	      <option ng-repeat="attribute in configValues.shaftFlexValues" value="{{attribute.value}}" ng-selected="{{attribute.value == shaftFlex}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.shaftFlexValues" value="{{attribute.value}}" ng-selected="{{attribute.value == model.shaftFlex}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -32,7 +32,7 @@
 	    <br/>
 
 	    Lie Angle: <select name="lieAngle" ng-model="model.lieAngle" ng-required="true">
-	      <option ng-repeat="attribute in configValues.lieAngleValues" value="{{attribute.value}}" ng-selected="{{attribute.value == lieAngle}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.lieAngleValues" value="{{attribute.value}}" ng-selected="{{attribute.value == model.lieAngle}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -42,7 +42,7 @@
 	    <br/>
 
 	    Shaft Length: <select name="shaftLength" ng-model="model.shaftLength" ng-required="true">
-	      <option ng-repeat="attribute in configValues.shaftLengthValues" value="{{attribute.value}}" ng-selected="{{attribute.value == shaftLength}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.shaftLengthValues" value="{{attribute.value}}" ng-selected="{{attribute.value == model.shaftLength}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -52,7 +52,7 @@
 	    <br/>
 
 	    Grip: <select name="gripType" ng-model="model.gripType" ng-required="true">
-	      <option ng-repeat="attribute in configValues.gripValues" value="{{attribute.value}}" ng-selected="{{attribute.value == gripType}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.gripValues" value="{{attribute.value}}" ng-selected="{{attribute.value == model.gripType}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -62,7 +62,7 @@
 	     <br/>
 
 	     Grip Size: <select name="gripSize" ng-model="model.gripSize" ng-required="true">
-	      <option ng-repeat="attribute in configValues.gripSizeValues" value="{{attribute.value}}" ng-selected="{{attribute.value == gripSize}}">{{attribute.value}}</option>
+	      <option ng-repeat="attribute in configValues.gripSizeValues" value="{{attribute.value}}" ng-selected="{{attribute.value == model.gripSize}}">{{attribute.value}}</option>
 		</select>
 		
 	    <p 
@@ -73,7 +73,7 @@
 
 	    Clubs:
 	    <label ng-repeat="club in configValues.clubsValues">
-	        <input type="checkbox" ng-model="model.clubs" value="{{club.value}}"> {{club.value}} 
+	        <input type="checkbox" ng-model="model.clubs"> {{club.value}} 
 	    </label>
 
 	    <br/>
