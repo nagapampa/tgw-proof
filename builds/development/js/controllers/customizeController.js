@@ -15,4 +15,21 @@ tgwCustomizerControllers.controller('SpecsController', ['$scope', '$http', 'mCon
       console.log('Add to cart');
     }; //addToCart
 
+    //using the JSON string passed in, get the property for the Attribute and return the String value
+    $scope.findAttribute = function (attrJSON){
+    	var x_attribute = angular.fromJson(attrJSON);
+    	if(attrJSON){
+    		attr = new Attribute(x_attribute.sequence, x_attribute.value, x_attribute.field3, x_attribute.identifier, x_attribute.uniqueID);
+    		return attr;
+    	}
+    };
+
+    var Attribute = function(sequence, value, field3, identifier, uniqueID){
+        this.sequence = sequence;
+        this.value = value;
+        this.field3 = field3;
+        this.identifier = identifier;
+        this.uniqueID = uniqueID;
+    };
+
   }]);
