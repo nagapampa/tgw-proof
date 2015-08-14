@@ -1,51 +1,163 @@
 <div ng-include="'views/helpNav.html'"></div>
-<h1>Profile</h2>
 
-<form name="frmStep1"
-    ng-submit="submitStep1()" novalidate>
+<!-- start STEP 1 DIV -->
+<div id="step1" ng-show="currentStep == 1">
+	<h1>Profile</h2>
 
-    <section class="step1">
+	<form name="frmStep1"
+	    ng-submit="submitStep1()" novalidate>
 
-		Dexterity:
-	    <input type="radio" ng-model="model.dexterity" value="right">Right
-	    <input type="radio" ng-model="model.dexterity" value="left">Left
+	    <section class="step1">
 
-	    <br/>
+			Dexterity:
+		    <input type="radio" ng-model="model.dexterity" value="right">Right
+		    <input type="radio" ng-model="model.dexterity" value="left">Left
 
-    	Select your height: 
-	    <select name="feet" ng-model="model.feet" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == model.feet}}">{{f}}</option>
-		</select>'
-		<select name="inches" ng-model="model.inches" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == model.inches}}">{{i}}</option>
-		</select>''
-		
-	    <p ng-show="frmStep1.feet.$invalid && frmStep1.feet.$touched">
-	      Feet is a required field</p>
+		    <br/>
 
-	    <p ng-show="frmStep1.inches.$invalid && frmStep1.inches.$touched">
-	      Inches is a required field</p>
+	    	Select your height: 
+		    <select name="feet" ng-model="model.feet" ng-required="true" ng-change="updateBackground($element)">
+		      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == model.feet}}">{{f}}</option>
+			</select>'
+			<select name="inches" ng-model="model.inches" ng-required="true" ng-change="updateBackground($element)">
+		      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == model.inches}}">{{i}}</option>
+			</select>''
+			
+		    <p ng-show="frmStep1.feet.$invalid && frmStep1.feet.$touched">
+		      Feet is a required field</p>
 
-	    <br/>
+		    <p ng-show="frmStep1.inches.$invalid && frmStep1.inches.$touched">
+		      Inches is a required field</p>
 
-	    Select your wrist to floor: 
-	    <select name="wrist" ng-model="model.wrist" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="attribute in attributeValues.wristToFloorValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == model.wrist}}">{{attribute.attrValue}}</option>
-		</select>
-		
-	    <p ng-show="frmStep1.wrist.$invalid && frmStep1.wrist.$touched">
-	      Wrist to floor is a required field</p>
+		    <br/>
 
-	    <br/>
+		    Select your wrist to floor: 
+		    <select name="wrist" ng-model="model.wrist" ng-required="true" ng-change="updateBackground($element)">
+		      <option ng-repeat="attribute in attributeValues.wristToFloorValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == model.wrist}}">{{attribute.attrValue}}</option>
+			</select>
+			
+		    <p ng-show="frmStep1.wrist.$invalid && frmStep1.wrist.$touched">
+		      Wrist to floor is a required field</p>
 
-	    Additional Clubs Desired:
-	    <label ng-repeat="club in configValues.clubsValues">
-	        <input type="checkbox" name="clubs" ng-model="model.clubs" ng-change="updateBackground($element)"> {{club.value}} 
-	    </label>
+		    <br/>
 
-	</section>
+		    Additional Clubs Desired:
+		    <label ng-repeat="club in configValues.clubsValues">
+		        <input type="checkbox" name="clubs" ng-model="model.clubs" ng-change="updateBackground($element)"> {{club.value}} 
+		    </label>
 
-	<button type="submit" 
-  		ng-disabled="frmStep1.$invalid">Proceed to Shaft Type</button>
-  	
-</form>
+		</section>
+
+		<button type="submit" 
+	  		ng-disabled="frmStep1.$invalid">Proceed to Shaft Type</button>
+	  	
+	</form>
+<!-- end STEP 1 DIV -->	
+</div>
+
+<!-- start STEP 2 DIV -->
+<div id="step2" ng-show="currentStep == 2">
+
+	<h1>Shaft Options</h2>
+
+	<form name="frmStep2"
+	    ng-submit="submitStep2()" novalidate>
+
+	    <section class="step2">
+
+	      Select a Shaft Type: 
+	      <select name="shaftType" ng-model="model.shaftType" ng-required="true" ng-change="updateBackground($element)">
+	          <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute}}" ng-selected="{{attribute === model.shaftType}}">{{attribute.value}}</option>
+	      </select>
+	      
+	      <p 
+	        ng-show="frmStep2.shaftType.$invalid && frmStep2.shaftType.$touched">
+	        Shaft type is a required field</p>
+
+	      <br/>
+
+	    	How Far Do You Hit Your Driver?: 
+	      <select name="driverDistance" ng-model="model.driverDistance" ng-required="true" ng-change="updateBackground($element)">
+	          <option ng-repeat="attribute in attributeValues.driverDistanceValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == model.driverDistance}}">{{attribute.attrValue}}</option>
+	    	</select>
+	    	
+	      <p ng-show="frmStep2.driverDistance.$invalid && frmStep2.driverDistance.$touched">
+	        Driver distance is a required field</p>
+
+	      <br/>
+
+	      What Is Your Desired Ball Trajectory?
+	      <select name="trajectory" ng-model="model.trajectory" ng-required="true" ng-change="updateBackground($element)">
+	          <option ng-repeat="t in trajectoryMeasurement" value="{{t}}" ng-selected="{{t == model.trajectory}}">{{t}}</option>
+	      </select>
+
+	      <p ng-show="frmStep2.trajectory.$invalid && frmStep2.trajectory.$touched">
+	        Trajectory is a required field</p>
+
+		</section>
+
+		<button type="submit" 
+	  		ng-disabled="frmStep2.$invalid">Proceed to Grip Type</button>
+
+	</form>
+
+</div>
+<!-- end STEP 2 DIV -->
+
+<!-- start STEP 3 DIV -->
+<div id="step3" ng-show="currentStep == 3">
+
+	<h1>Grip Options</h2>
+
+	<form name="frmStep3"
+	    ng-submit="submitStep3()" novalidate>
+
+	    <section class="step3">
+
+	      Select a Grip Type: 
+	      <select name="gripType" ng-model="model.gripType" ng-required="true" ng-change="updateBackground($element)">
+	          <option ng-repeat="attribute in configValues.gripValues" value="{{attribute}}" ng-selected="{{attribute == gripType}}">{{attribute.value}}</option>
+	      </select>
+	      
+	      <p 
+	        ng-show="frmStep3.gripType.$invalid && frmStep3.gripType.$touched">
+	        Grip type is a required field</p>
+
+	      <br/>
+
+	    	Hand Length: 
+	      <select name="handLength" ng-model="model.handLength" ng-required="true" ng-change="updateBackground($element)">
+	        <option ng-repeat="attribute in attributeValues.handLengthValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == handLength}}">{{attribute.attrValue}}</option>   
+	    	</select>
+	    	
+	      <p 
+	        ng-show="frmStep3.handLength.$invalid && frmStep3.handLength.$touched">
+	        Hand Length is a required field</p>
+
+	      <br/>
+
+	      Longest Finger:
+	      <select name="longestFinger" ng-model="model.longestFinger" ng-required="true" ng-change="updateBackground($element)">
+	        <option ng-repeat="f in longestFingerMeasurement" value="{{f}}" ng-selected="{{f == longestFinger}}">{{f}}</option>   
+	      </select>''
+	      
+	      <p 
+	        ng-show="frmStep3.longestFinger.$invalid && frmStep3.longestFinger.$touched">
+	        Longest Finger is a required field</p>
+
+		</section>
+
+		<button type="submit"
+	  		ng-disabled="frmStep3.$invalid">Review & Purchase</button>
+	  	<br/>
+	  	<a ng-href="#/intro">Back to Intro</a>
+	</form>
+
+</div>
+<!-- end STEP 3 DIV -->
+
+<!-- start STEP 4 DIV -->
+<div id="step4" ng-show="currentStep == 4">
+	<div ng-include="'views/specs.html'"></div>	
+</div>
+<!-- end STEP 4 DIV -->

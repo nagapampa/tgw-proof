@@ -1,8 +1,6 @@
 <div>
-  <ol>
-	<li ng-class="{ active: isActive('/fittingGuide') }">Profile Info</li>
-    <li ng-class="{ active: isActive('/help/2') }">Shaft Type</li>
-    <li ng-class="{ active: isActive('/help/3') }">Grip Type</li>
-    <li ng-class="{ active: isActive('/helpReview') }">Review & Purchase</li>
-  </ol>
+	<button ng-click="navigate(1)" ng-disabled="completed1==false" ng-class="{ active: currentStep == 1 }">Profile Info</button>
+	<button ng-click="navigate(2)" ng-disabled="completed2==false" ng-class="{ active: currentStep == 2 }">Shaft Type</button>
+	<button ng-click="navigate(3)" ng-disabled="completed3==false" ng-class="{ active: currentStep == 3 }">Grip Type</button>
+	<button ng-click="navigate(4)" ng-disabled="completed3==false" ng-class="{ active: currentStep == 4 }">Review & Purchase</button>
 </div>
