@@ -84,22 +84,17 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
 
         findMatch: function(relationshipValues, p_wristtofloor, lieAngleValues) {
             matchedAttribute = '';
-            console.log('before matchedAttribute: '+matchedAttribute);
             var keepGoing = true;
             angular.forEach(relationshipValues, function(value, key) {
-                console.log('TOP '+value.attrValue);
                 if(value.attrValue === p_wristtofloor || keepGoing){                    
                     angular.forEach(value.arrRelationships, function(value, key2) {
                         currentLieAngle = value.attrValue[0];
-                        console.log('-----'+currentLieAngle);
                         angular.forEach(lieAngleValues, function(lieAngleValue, lieAngleKey) {
                             if(lieAngleValue.value === currentLieAngle){
                                 matchedAttribute = lieAngleValue;
                                 keepGoing = false;
-                                console.log('STOP!');
                             }else{
                                 keepGoing = true;
-                                console.log('KEEP GOING');
                             }
                         });
                     });
@@ -107,9 +102,7 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
             });
             if(!matchedAttribute){
                 matchedAttribute = lieAngleValues[0];
-                console.log('return the first');
             }
-            console.log(matchedAttribute);
             return matchedAttribute;
         }
     };

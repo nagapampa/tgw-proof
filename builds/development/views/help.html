@@ -14,10 +14,10 @@
 
     	Select your height: 
 	    <select name="feet" ng-model="model.feet" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == feet}}">{{f}}</option>
+	      <option ng-repeat="f in feetMeasurement" value="{{f}}" ng-selected="{{f == model.feet}}">{{f}}</option>
 		</select>'
 		<select name="inches" ng-model="model.inches" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == inches}}">{{i}}</option>
+	      <option ng-repeat="i in inchesMeasurement" value="{{i}}" ng-selected="{{i == model.inches}}">{{i}}</option>
 		</select>''
 		
 	    <p ng-show="frmStep1.feet.$invalid && frmStep1.feet.$touched">
@@ -30,7 +30,7 @@
 
 	    Select your wrist to floor: 
 	    <select name="wrist" ng-model="model.wrist" ng-required="true" ng-change="updateBackground($element)">
-	      <option ng-repeat="attribute in attributeValues.wristToFloorValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == wrist}}">{{attribute.attrValue}}</option>
+	      <option ng-repeat="attribute in attributeValues.wristToFloorValues | orderBy:'attrValue'" value="{{attribute.attrValue}}" ng-selected="{{attribute.attrValue == model.wrist}}">{{attribute.attrValue}}</option>
 		</select>
 		
 	    <p ng-show="frmStep1.wrist.$invalid && frmStep1.wrist.$touched">
