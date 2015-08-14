@@ -34,10 +34,8 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
     var driverDistanceValues = []; //p_driverdistance
     var yardClubValues = []; //p_150yardclub
 
-    //declare values determined by relationships defined
-    var lieAngle;
-    var gripSize;
-    var shaftFlex;
+    //declare value determined by relationships defined
+    var matchedAttribute;
 
     return {
         getRelationships: function (data) {
@@ -84,37 +82,35 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
             return attributeRelationships; 
         },
 
-        getLieAngle: function(p_wristtofloor) {
-            angular.forEach(wristToFloorValues, function(value, key) {
-                if(value.attrValue === p_wristtofloor){                    
-                    angular.forEach(value.arrRelationships, function(value, key) {
-                        lieAngle = value.attrValue[0];
+        findMatch: function(relationshipValues, p_wristtofloor, lieAngleValues) {
+            matchedAttribute = '';
+            console.log('before matchedAttribute: '+matchedAttribute);
+            var keepGoing = true;
+            angular.forEach(relationshipValues, function(value, key) {
+                console.log('TOP '+value.attrValue);
+                if(value.attrValue === p_wristtofloor || keepGoing){                    
+                    angular.forEach(value.arrRelationships, function(value, key2) {
+                        currentLieAngle = value.attrValue[0];
+                        console.log('-----'+currentLieAngle);
+                        angular.forEach(lieAngleValues, function(lieAngleValue, lieAngleKey) {
+                            if(lieAngleValue.value === currentLieAngle){
+                                matchedAttribute = lieAngleValue;
+                                keepGoing = false;
+                                console.log('STOP!');
+                            }else{
+                                keepGoing = true;
+                                console.log('KEEP GOING');
+                            }
+                        });
                     });
                 }
             });
-            return lieAngle;
-        },
-
-        getGripSize: function(p_handlength) {
-            angular.forEach(handLengthValues, function(value, key) {
-                if(value.attrValue === p_handlength){                    
-                    angular.forEach(value.arrRelationships, function(value, key) {
-                        gripSize = value.attrValue[0];
-                    });
-                }
-            });
-            return gripSize;
-        },
-
-        getShaftFlex: function(p_driverdistance) {
-            angular.forEach(driverDistanceValues, function(value, key) {
-                if(value.attrValue === p_driverdistance){                    
-                    angular.forEach(value.arrRelationships, function(value, key) {
-                        shaftFlex = value.attrValue[0];
-                    });
-                }
-            });
-            return shaftFlex;
+            if(!matchedAttribute){
+                matchedAttribute = lieAngleValues[0];
+                console.log('return the first');
+            }
+            console.log(matchedAttribute);
+            return matchedAttribute;
         }
     };
             

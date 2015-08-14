@@ -21,19 +21,7 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$
 
     //using the JSON string passed in, get the property for the Attribute and return the String value
     $scope.findAttribute = function (attrJSON){
-      var x_attribute = angular.fromJson(attrJSON);
-      if(attrJSON){
-        attr = new Attribute(x_attribute.sequence, x_attribute.value, x_attribute.field3, x_attribute.identifier, x_attribute.uniqueID);
-        return attr;
-      }
-    };
-
-    var Attribute = function(sequence, value, field3, identifier, uniqueID){
-        this.sequence = sequence;
-        this.value = value;
-        this.field3 = field3;
-        this.identifier = identifier;
-        this.uniqueID = uniqueID;
+      return angular.fromJson(attrJSON);
     };
 
     //set variable to determine Help vs. Customize page for sub-navigation
@@ -50,19 +38,19 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$location', '$
     
     $scope.submitStep1 = function() {
       //set the Lie Angle based off the relationship defined in mConfigurationRelationhips
-      $scope.model.lieAngle = mConfigurationRelationhips.getLieAngle($scope.model.wrist)
+      $scope.model.lieAngle = mConfigurationRelationhips.findMatch($scope.attributeValues.wristToFloorValues, $scope.model.wrist, $scope.configValues.lieAngleValues)
       $location.path('/help/2');
     }; //submitStep1
 
     $scope.submitStep2 = function() {
       //set the Lie Angle based off the relationship defined in mConfigurationRelationhips
-      $scope.model.shaftFlex = mConfigurationRelationhips.getShaftFlex($scope.model.driverDistance)
+      $scope.model.shaftFlex = mConfigurationRelationhips.findMatch($scope.attributeValues.driverDistanceValues, $scope.model.driverDistance, $scope.configValues.shaftFlexValues)
       $location.path('/help/3');
     }; //submitStep2
 
     $scope.submitStep3 = function() {
       //set the Grip Size based off the relationship defined in mConfigurationRelationhips
-      $scope.model.gripSize = mConfigurationRelationhips.getGripSize($scope.model.handLength)
+      $scope.model.gripSize = mConfigurationRelationhips.findMatch($scope.attributeValues.handLengthValues, $scope.model.handLength, $scope.configValues.gripSizeValues)
       $location.path('/helpReview');
     }; //submitStep3
 

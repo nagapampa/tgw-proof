@@ -9,7 +9,7 @@
 
       Select a Shaft Type: 
       <select name="shaftType" ng-model="model.shaftType" ng-required="true" ng-change="updateBackground($element)">
-          <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute.value}}" ng-selected="{{attribute.value == shaftType}}">{{attribute.value}}</option>
+          <option ng-repeat="attribute in configValues.shaftTypeValues" value="{{attribute}}" ng-selected="{{attribute == shaftType}}">{{attribute.value}}</option>
       </select>
       
       <p 
