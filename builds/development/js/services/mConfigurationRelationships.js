@@ -82,28 +82,26 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
             return attributeRelationships; 
         },
 
-        findMatch: function(relationshipValues, p_wristtofloor, lieAngleValues) {
-            matchedAttribute = '';
-            var keepGoing = true;
-            angular.forEach(relationshipValues, function(value, key) {
-                if(value.attrValue === p_wristtofloor || keepGoing){                    
-                    angular.forEach(value.arrRelationships, function(value, key2) {
-                        currentLieAngle = value.attrValue[0];
-                        angular.forEach(lieAngleValues, function(lieAngleValue, lieAngleKey) {
-                            if(lieAngleValue.value === currentLieAngle){
-                                matchedAttribute = lieAngleValue;
-                                keepGoing = false;
-                            }else{
-                                keepGoing = true;
-                            }
-                        });
-                    });
-                }
+        findMatch: function(selectedValue, lookupQuestion, questions, configValues) {
+            matchedAttribute = new Attribute('','','');
+            //loop through questions and find the object that matches the selectedValue
+            angular.forEach(questions, function(value, key) {
+                if(key == lookupQuestion){
+                    angular.forEach(value.values, function(questionValue, questionKey) {
+                        if(questionKey == selectedValue){
+                            matchedValue = questionValue; 
+                            angular.forEach(configValues, function(value, key) {
+                                if(value.value == matchedValue){
+                                    matchedAttribute = value; 
+                                }
+                                                                 
+                            }); 
+                        }
+                                 
+                    }); 
+                }                                  
             });
-            if(!matchedAttribute){
-                matchedAttribute = lieAngleValues[0];
-            }
-            return matchedAttribute;
+            return matchedAttribute; 
         }
     };
             
