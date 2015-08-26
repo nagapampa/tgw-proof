@@ -14,13 +14,13 @@
          "buyable":"true",
          "price":[  
             {  
-               "value":"",
+               "value":"100",
                "currency":"USD",
                "usage":"Display",
                "description":"L"
             },
             {  
-               "value":"",
+               "value":"90",
                "currency":"USD",
                "usage":"Offer",
                "description":"O"

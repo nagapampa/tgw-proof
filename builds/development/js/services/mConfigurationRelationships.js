@@ -101,6 +101,7 @@ var mConfigurationRelationhips = angular.module('mConfigurationRelationhips', []
                     }); 
                 }                                  
             });
+            console.log(matchedAttribute);
             return matchedAttribute; 
         }
     };

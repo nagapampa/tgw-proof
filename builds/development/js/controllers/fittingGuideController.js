@@ -58,7 +58,7 @@ tgwCustomizerControllers.controller('HelpController', ['$scope', '$http', 'Custo
     $scope.completed3 = false;
     
     $scope.submitStep1 = function() {
-      //set the Lie Angle based off the relationship defined in mConfigurationRelationhips
+      //set the Lie Angle based off the relationship defined in mConfigurationRelationhips questions['p_wristtofloor'][$scope.model.wrist];
       $scope.model.lieAngle = mConfigurationRelationhips.findMatch($scope.model.wrist, 'p_wristtofloor', questions, $scope.configValues.lieAngleValues);
       $scope.model.shaftLength = mConfigurationRelationhips.findMatch($scope.model.feet+'\''+$scope.model.inches+'\"', 'p_height', questions, $scope.configValues.shaftLengthValues);
       $scope.completed1 = true;

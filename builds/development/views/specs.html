@@ -90,20 +90,20 @@
     <section class="itemTotal">
     	<h2>Club Specifications and Cost</h2>
     	<ul>
-    		<li>Shaft Type: {{findAttribute(model.shaftType).value}}</li>
-    		<li>Shaft Flex: {{findAttribute(model.shaftFlex).value}}</li>
-    		<li>Lie Angle: {{findAttribute(model.lieAngle).value}}</li>
-    		<li>Shaft Length: {{findAttribute(model.shaftLength).value}}</li>
-    		<li>Grip: {{findAttribute(model.gripType).value}}</li>
-    		<li>Grip Size: {{findAttribute(model.gripSize).value}}</li>
-    		<li>Clubs: {{model.clubs}}</li>
+    		<li>Shaft Type: {{findAttribute(model.shaftType).value}} {{findAttribute(model.shaftType).field3}}</li>
+    		<li>Shaft Flex: {{findAttribute(model.shaftFlex).value}} {{findAttribute(model.shaftFlex).field3}}</li>
+    		<li>Lie Angle: {{findAttribute(model.lieAngle).value}} {{findAttribute(model.lieAngle).field3}}</li>
+    		<li>Shaft Length: {{findAttribute(model.shaftLength).value}} {{findAttribute(model.shaftLength).field3}}</li>
+    		<li>Grip: {{findAttribute(model.gripType).value}} {{findAttribute(model.gripType).field3}}</li>
+    		<li>Grip Size: {{findAttribute(model.gripSize).value}} {{findAttribute(model.gripSize).field3}}</li>
+    		<li>Clubs: {{model.clubs}} {{findAttribute(model.clubs).field3}}</li>
     		<li>Dexterity: {{model.dexterity}}</li>
     	</ul>
-    	Base Club
+    	Base Club {{configValues.product.catalogEntryView[0].price[1].value}}
     	<br/>
-    	Total Options
+    	Total Options {{findAttribute(model.shaftType).field3 -- findAttribute(model.shaftFlex).field3 -- findAttribute(model.lieAngle).field3 -- findAttribute(model.shaftLength).field3 -- findAttribute(model.gripType).field3 -- findAttribute(model.gripSize).field3}}
     	<br/>
-    	Total with Adjustments
+    	Total with Adjustments {{findAttribute(model.shaftType).field3 -- findAttribute(model.shaftFlex).field3 -- findAttribute(model.lieAngle).field3 -- findAttribute(model.shaftLength).field3 -- findAttribute(model.gripType).field3 -- findAttribute(model.gripSize).field3 -- configValues.product.catalogEntryView[0].price[1].value}}
     </section>
 
 	<button type="submit" class="btn"
